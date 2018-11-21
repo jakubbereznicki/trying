@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-font: #ffffff;
+    /*white*/
+    --alt-font: #ff5a00;
+    /*orange*/
+    --main-bg: #000000;
+    /*black*/
+    --bg: #222222;
+    /*gray*/
+    --border-color: #333;
+}
+
+html {
+    font-family: 'Roboto',
+        sans-serif;
+    font-size: 24px;
+    color: var(--main-font);
+}
+
+/* header */
+
+header {
+    /* flexbox */
+    display: flex;
+    flex-direction: column;
+
+    /* ... */
+    height: 100vh;
+}
+
+/* navbar mobile */
+header .navMobile {
+    flex: 0 1 12vh;
+
+    display: none;
+    background-color: var(--bg);
+    position: relative;
+}
+
+header .navMobile .image {
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translateY(-50%);
+    /* margin: auto 50px; */
+}
+
+header .navMobile .image img {
+    height: 25px;
+}
+
+header .navMobile i {
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 7%;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* portrait */
+/* 320x533 */
+@media (min-width:320px) {
+    header .navMobile .image img {
+        height: 20px;
+    }
+
+    header .navMobile i {
+        right: 7%;
+    }
+}
+
+/* 375x667 */
+@media (min-width: 375px) {
+    header .navMobile i {
+        top: calc(50% - 14px);
+        font-size: 1.2rem;
+    }
+}
+
+/* 414x736 */
+@media (min-width: 414px) {
+    header .navMobile .image img {
+        height: 28px;
+    }
+
+    header .navMobile i {
+        top: calc(50% - 18px);
+        font-size: 1.5rem;
+    }
+}
+
+/* 768x1024 */
+@media (min-width: 768px) {
+    header .navMobile .image {
+        left: 35px;
+    }
+
+    header .navMobile .image img {
+        height: 32px;
+    }
+
+    header .navMobile i {
+        top: calc(50% - 20px);
+        right: 5%;
+        font-size: 1.8rem;
+    }
+}
+
+/* landscape */
+/* 320x533 */
+@media (orientation: landscape) and (min-width: 533px) {
+    header .navMobile .image img {
+        height: 18px;
+    }
+
+    header .navMobile i {
+        top: calc(50% - 9px);
+        font-size: 0.8rem;
+    }
+}
+
+/* 320x568 */
+@media (orientation: landscape) and (min-width: 568px) {
+    header .navMobile .image img {
+        height: 15px;
+    }
+
+    header .navMobile i {
+        top: calc(50% - 8px);
+        font-size: 0.7rem;
+    }
+}
+
+/* 375x667 */
+@media (orientation: landscape) and (min-width: 667px) {
+    header .navMobile .image img {
+        height: 20px;
+    }
+
+    header .navMobile i {
+        top: calc(50% - 12px);
+        font-size: 1rem;
+    }
+}
+
+/* 414x736 */
+@media (orientation: landscape) and (min-width: 736px) {
+    header .navMobile .image img {
+        height: 20px;
+    }
+
+    header .navMobile i {
+        top: calc(50% - 12px);
+        font-size: 1rem;
+    }
+}
+
+/* 375x812 */
+@media (orientation: landscape) and (max-width: 812px) {
+    header .navMobile .image img {
+        height: 20px;
+    }
+
+    header .navMobile i {
+        top: calc(50% - 12px);
+        font-size: 1rem;
+    }
+}
+
+/* navbar mobile bars */
+.bar {
+    display: none;
+    position: absolute;
+    top: 12vh;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--bg);
+}
+
+.bar li {
+    padding: 20px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header .bar li a {
+    text-decoration: none;
+    color: var(--main-font);
+    padding: 5px;
+    transition: .3s;
+}
+
+/* navbar bigScreen */
+header .nav {
+    flex: 0 1 12vh;
+    justify-content: flex-end;
+
+    /* parentflex */
+    display: flex;
+    flex-direction: row;
+
+
+    /* ... */
+    background-color: var(--bg);
+}
+
+@media (max-width: 980px) {
+    header .nav {
+        display: none;
+    }
+
+    header .navMobile {
+        display: block;
+    }
+}
+
+header .nav .image {
+    flex: 0 1 50%;
+
+    margin: auto 4%;
+}
+
+header .nav .image img {
+    width: 250px;
+}
+
+header .nav .bigScreen {
+    flex: 0 1 50%;
+    justify-content: space-around;
+
+    /* parent flex */
+    display: flex;
+    flex-direction: row;
+
+    /* ... */
+    list-style: none;
+    margin-right: 3%;
+}
+
+header .nav .bigScreen li {
+    font-size: 0.7rem;
+    line-height: 12vh;
+    margin-right: 1%;
+}
+
+header .nav .bigScreen li a {
+    text-decoration: none;
+    color: var(--main-font);
+    padding: 5px;
+    transition: .3s;
+}
+
+header .nav .bigScreen li a:hover {
+    color: var(--alt-font);
+    border-bottom: 3px solid var(--alt-font);
+}
+
+header .nav .bigScreen li:nth-last-child(3) {
+    margin-left: 25px;
+}
+
+
+
+
+
+header .sentence {
+    flex: 0 1 88vh;
+
+    background-color: #333;
+}
